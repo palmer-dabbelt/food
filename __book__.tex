@@ -1,0 +1,24 @@
+\documentclass{book}
+\usepackage{food}
+
+\author{Palmer Dabbelt}
+\title{Food!}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\contentsskip
+
+\newcommand{\maketitle}{}
+\renewcommand{\tableofcontents}{}
+\newcommand{\author}[1]{}
+\newcommand{\title}[1]{}
+\renewcommand{\contentsskip}{}
+\renewcommand{\bref}[1]{\ref{#1}}
+
+\chapter{Soup}
+\input{soup.stex}
+
+\chapter{Pasta}
+
+\end{document}

@@ -1,0 +1,55 @@
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesClass{food}
+\usepackage{fullpage}
+\usepackage{units}
+\usepackage{nicefrac}
+\usepackage{ifthen}
+\usepackage{url}
+\usepackage{hyperref}
+
+% There are some sections inside an enviornment, don't show those.
+% This shows ``section'', but not ``subsection''.
+\setcounter{tocdepth}{1}
+
+% This environment should wrap all recipes
+\newenvironment{recipe}[1]
+{\section{#1}}
+{\clearpage}
+
+\newcommand{\servings}[1]{\textit{Serves: #1}\vspace{1em}}
+
+% This wraps the ingredient list.  You should use \ingredient for each
+% item in the list because it's formatted as a table.
+\newenvironment{ingredients}
+{\subsection*{Ingredients}
+\begin{tabular}{rl}}
+{\end{tabular}}
+
+\newcommand{\ingredient}[3]
+{#1 #2 & #3 \\}
+
+% This wraps the list of steps that must be performed in order to cook
+% something.
+\newenvironment{steps}
+{\subsection*{Procedure}
+\begin{itemize}}
+{\end{itemize}}
+
+% A list of special notes about some sort of food that I've cooked,
+% things I should try again and such.
+\newenvironment{notes}
+{\subsection*{Notes}
+\begin{itemize}}
+{\end{itemize}}
+
+% This is put after every table of contents
+\newcommand{\contentsskip}{\clearpage}
+
+% Here's some nice fractions
+\newcommand{\half}{\nicefrac{1}{2}}
+\newcommand{\quarter}{\nicefrac{1}{4}}
+
+% This allows me to ``reference'' things that will only be in the
+% book.
+\DeclareUrlCommand\UScore{\urlstyle{tt}}
+\newcommand{\bref}[1]{\UScore{#1}}
