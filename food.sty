@@ -5,6 +5,9 @@
 \usepackage{nicefrac}
 \usepackage{ifthen}
 \usepackage{url}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{multicol}
 \usepackage{hyperref}
 
 % There are some sections inside an enviornment, don't show those.
@@ -17,6 +20,11 @@
 {\clearpage}
 
 \newcommand{\servings}[1]{\textit{Serves: #1}\vspace{1em}}
+
+% Here's where you stick photos of the food.
+\newenvironment{images}
+{\begin{center}\begin{minipage}{0.95\linewidth}\begin{multicols}{2}}
+{\end{multicols}\end{minipage}\end{center}}
 
 % This wraps the ingredient list.  You should use \ingredient for each
 % item in the list because it's formatted as a table.
