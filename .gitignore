@@ -1,3 +1,4 @@
 *.pdf
 .tek_cache
 Makefile
+*~
