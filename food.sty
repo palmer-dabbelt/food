@@ -16,22 +16,43 @@
 
 % This environment should wrap all recipes
 \newenvironment{recipe}[1]
-{\section{#1}}
-{\clearpage}
+{%
+  \section{#1}%
+  \begin{multicols}{2}%
+}
+{%
+  \end{multicols}%
+  \clearpage%
+}
 
-\newcommand{\servings}[1]{\textit{Serves: #1}\vspace{1em}}
+%\newcommand{\servings}[1]{\textit{Serves: #1}\vspace{1em}}
+\newcommand{\servings}[1]{}
 
-% Here's where you stick photos of the food.
+% Here's where you stick photos of the food.  Note that this is only
+% going to work when inside a recipe as it assums it's inside a
+% multicols.
 \newenvironment{images}
-{\begin{center}\begin{minipage}{0.95\linewidth}\begin{multicols}{2}}
-{\end{multicols}\end{minipage}\end{center}}
+{%
+  \begin{center}
+}
+{%
+  \end{center}
+}
+
+\newenvironment{image}
+{}
+{}
 
 % This wraps the ingredient list.  You should use \ingredient for each
 % item in the list because it's formatted as a table.
 \newenvironment{ingredients}
-{\subsection*{Ingredients}
-\begin{tabular}{rl}}
-{\end{tabular}}
+{%
+  \subsection*{Ingredients}%
+  \begin{tabular}{rl}%
+}
+{%
+  \end{tabular}%
+}
 
 \newcommand{\ingredient}[3]
 {#1 #2 & #3 \\}
@@ -39,16 +60,26 @@
 % This wraps the list of steps that must be performed in order to cook
 % something.
 \newenvironment{steps}
-{\subsection*{Procedure}
-\begin{itemize}}
-{\end{itemize}}
+{%
+  \vfill%
+  \columnbreak%
+  \subsection*{Procedure}%
+  \begin{itemize}%
+}
+{%
+  \end{itemize}%
+}
 
 % A list of special notes about some sort of food that I've cooked,
 % things I should try again and such.
 \newenvironment{notes}
-{\subsection*{Notes}
-\begin{itemize}}
-{\end{itemize}}
+{%
+  \subsection*{Notes}%
+  \begin{itemize}%
+}
+{%
+  \end{itemize}%
+}
 
 % This is put after every table of contents
 \newcommand{\contentsskip}{\clearpage}
