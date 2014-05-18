@@ -5,7 +5,7 @@
 \usepackage{food}
 \usepackage{fancyhdr}
 
-% Don't put the page number anywhere
+% Attach my name and the date to the bottom of each page
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}%
 \fancyhf{}
