@@ -3,3 +3,15 @@
 \ProvidesClass{recipe}
 
 \usepackage{food}
+
+% This environment should wrap all recipes
+\renewenvironment{recipe}[1]
+{%
+  \title{#1}%
+  \maketitle%
+  \begin{multicols}{2}%
+}
+{%
+  \end{multicols}%
+  \clearpage%
+}
