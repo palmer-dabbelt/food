@@ -11,7 +11,7 @@
 \renewcommand{\maketitle}
 {%
   \begin{center}%
-    \Large
+    \Huge
     \@title%
   \end{center}%
 }
