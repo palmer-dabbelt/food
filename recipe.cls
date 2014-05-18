@@ -4,6 +4,18 @@
 
 \usepackage{food}
 
+% Don't put the page number anywhere
+\pagestyle{empty}
+
+% A simple small title
+\renewcommand{\maketitle}
+{%
+  \begin{center}%
+    \Large
+    \@title%
+  \end{center}%
+}
+
 % This environment should wrap all recipes
 \renewenvironment{recipe}[1]
 {%
