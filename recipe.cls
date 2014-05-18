@@ -3,9 +3,14 @@
 \ProvidesClass{recipe}
 
 \usepackage{food}
+\usepackage{fancyhdr}
 
 % Don't put the page number anywhere
-\pagestyle{empty}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}%
+\fancyhf{}
+\lfoot{\@author}
+\rfoot{\@date}
 
 % A simple small title
 \renewcommand{\maketitle}
