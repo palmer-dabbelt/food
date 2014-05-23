@@ -9,13 +9,21 @@
 \usepackage{graphicx}
 \usepackage{grffile}
 \usepackage{multicol}
+\usepackage{xcolor}
 \usepackage[pdfusetitle]{hyperref}
 
 % Here's my own metadata
 \author{Palmer Dabbelt}
 
 \makeatletter
-\hypersetup{pdfsubject=Cooking,pdfkeywords=food;cooking}
+\hypersetup{
+  pdfsubject=Cooking,
+  pdfkeywords=food;cooking,
+  colorlinks=true,
+  linkcolor={red!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black}
+}
 \makeatother
 
 % There are some sections inside an enviornment, don't show those.
